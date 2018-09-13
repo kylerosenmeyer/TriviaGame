@@ -1,0 +1,15 @@
+body {
+    margin: auto;
+    text-align: center;
+}
+
+p {
+    font-size: 20px;
+}
+
+.jumbotron, .jumbotron-fluid {
+    padding: 0px auto;
+    background-color: palegreen;
+    color: rgb(90, 130, 145);
+    text-shadow: 1px 1px 1px rgb(75, 90, 90);
+}
