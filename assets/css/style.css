@@ -25,7 +25,7 @@ p {
     height: 50px;
 }
 
-#question, #report {
+#question, #report, #graphics {
     width: 100%;
     font-size: 25px;
     padding: 10px 20px;

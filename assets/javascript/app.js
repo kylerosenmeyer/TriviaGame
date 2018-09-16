@@ -9,17 +9,16 @@ var laW = {
     // This is the question bank for the game. It is a multi-dimensional array.
 
     questionBank: [
-        ["question1", "answer1A", "answer1B", "answer1C", "answer1D"],
-        ["question2", "answer2A", "answer2B", "answer2C","answer2D"],
-        ["question3", "answer3A", "answer3B", "answer3C", "answer3D"],
-        ["question4", "answer4A", "answer4B", "answer4C", "answer4D"],
-        ["question5", "answer5A", "answer5B", "answer5C", "answer5D"],
-        ["question6", "answer6A", "answer6B", "answer6C", "answer6D"],
-        ["question7", "answer7A", "answer7B", "answer7C", "answer7D"],
-        ["question8", "answer8A", "answer8B", "answer8C", "answer8D"],
-        ["question9", "answer9A", "answer9B", "answer9C", "answer9D"],
-        ["question10", "answer10A", "answer10B", "answer10C", "answer10D"],
-
+        ["In this state, cannibalism is punishable by up to 14 years in prison, except under \"life threatening conditions\".", "Idaho", "Montana", "Georgia", "That\'s NOT real!"],
+        ["In this state, business owners may be fined up to $1,000 for permitting a contest of dwarf-tossing.", "New York", "Florida", "California", "That\'s NOT real!"],
+        ["In this state, it is illegal to hold public office if you have fought in a duel with deadly weapons.", "Kentucky", "Texas", "South Carolina", "That\'s NOT real!"],
+        ["In this state, it is illegal to pass off Miracle Whip as real Mayonnaise. It must be labeled \"Renovated Mayonnaise\".", "Delaware", "Illinois", "Iowa", "That\'s NOT real!"],
+        ["In this state, it is illegal to collect seaweed at night.", "New Hampshire", "Florida", "Oregon", "That\'s NOT real!"],
+        ["In this state, a bingo game must not last more than 5 hours, unless it\'s ran by non-profit organization.", "Florida", "Kansas", "North Carolina", "That\'s NOT real!"],
+        ["In this state, farmers are permitted to use explosives to protect sunflower crops.", "Florida", "California", "South Dakota", "That\'s NOT real!"],
+        ["In this state, hanging a clothesline is prohibited!", "Vermont", "Tennessee", "Idaho", "That\'s NOT real!"],
+        ["In this state, it is illegal to substitute a hunting dog for a ferret.", "Wyoming", "West Virginia", "Arkansas", "That\'s NOT real!"],
+        ["In this state, it is illegal to feed garbage to pigs without a permit, unless you are raising the pig for your own consumption.", "Missouri", "Arizona", "North Carolina", "That\'s NOT real!"],
     ],
 
     // Setup initial variables. correctAnswers, incorrectAnswers, and timeOuts are used for the final report. 
@@ -49,20 +48,16 @@ var laW = {
         $("#clock").text(laW.minutes + laW.seconds)
         laW.seconds--
 
-        if ( ( laW.questionsAsked.length === 10 ) && ( laW.seconds < 0 ) ) {
-            laW.timeOuts++
-            console.log("timeOuts: " + laW.timeOuts)
-            console.log("We are going to the Report")
-            laW.gameReport()
-        } else if ( ( laW.questionsAsked.length !== 10 ) && ( laW.seconds < 0 ) ) {
+        if  ( laW.seconds < 0 ) {
             clearInterval(laW.timeCounter)
             laW.timeOuts++
             console.log("timeOuts: " + laW.timeOuts)
-            console.log("We are going on Break")
-            //Take out the game containers
-            $("#clock-container, #question-container, #button-container").fadeOut(2000)
-            laW.gamePhase = false;
-            setTimeout(laW.game, 7000)
+            // console.log("We are going on Break")
+            // //Take out the game containers
+            // $("#clock-container, #question-container, #button-container").fadeOut(1050)
+            // laW.gamePhase = false;
+            // setTimeout(laW.game, 7000)
+            laW.gameBreak("wrong")
         } 
             
     },
@@ -71,11 +66,12 @@ var laW = {
 
     gameDisplay: function() {
         //Bring in the game containers
-        $("#clock-container, #question-container, #button-container").fadeIn(2000)
+        $("#clock-container, #question-container, #button-container, #button-column").fadeIn(1050)
         laW.gamePhase = true
         laW.minutes = "00:"
         laW.seconds = 30
         $("#clock").css("color", "black").css("font-weight", "none")
+        $("#graphics").empty()
     },
 
     //The game function pulls a question from the questionBank array and populates the page. It also begins a new countdown.
@@ -120,11 +116,11 @@ var laW = {
         if ( ( this.qP === 0) || ( this.qP === 2 ) || ( this.qP === 4 ) ) {
             clearInterval(laW.timeCounter)
             this.correctAnswers++
-            this.gameBreak()
+            this.gameBreak("right")
         } else {
             clearInterval(laW.timeCounter)
             this.incorrectAnswers++
-            this.gameBreak()
+            this.gameBreak("wrong")
         }
     },
 
@@ -133,11 +129,11 @@ var laW = {
         if ( ( this.qP === 1) || ( this.qP === 8 ) || ( this.qP === 9 ) ) {
             clearInterval(laW.timeCounter)
             this.correctAnswers++
-            this.gameBreak()
+            this.gameBreak("right")
         } else {
             clearInterval(laW.timeCounter)
             this.incorrectAnswers++
-            this.gameBreak()
+            this.gameBreak("wrong")
         }
     },
 
@@ -146,11 +142,11 @@ var laW = {
         if ( ( this.qP === 5) || ( this.qP === 6 ) ) {
             clearInterval(laW.timeCounter)
             this.correctAnswers++
-            this.gameBreak()
+            this.gameBreak("right")
         } else {
             clearInterval(laW.timeCounter)
             this.incorrectAnswers++
-            this.gameBreak()
+            this.gameBreak("wrong")
         }
     },
 
@@ -159,36 +155,75 @@ var laW = {
         if ( ( this.qP === 3) || ( this.qP === 7 ) ) {
             clearInterval(laW.timeCounter)
             this.correctAnswers++
-            this.gameBreak()
+            this.gameBreak("right")
         } else {
             clearInterval(laW.timeCounter)
             this.incorrectAnswers++
-            this.gameBreak()
+            this.gameBreak("wrong")
         }
     },
 
     // These are the functions to run either in between questions or at the end of the game. The gameBreak question will also queue up the appropriate content to display during the break.
 
-    gameBreak: function() {
+    gameBreak: function(response) {
         //Take out the game containers
-        $("#clock-container, #question-container, #button-container").fadeOut(2000)
+        $("#clock-container, #question-container, #button-column").fadeOut(1050)
+        $("#graphics").delay(1050).fadeIn(1050)
         laW.gamePhase = false;
         console.log("We are going on Break")
-        setTimeout(laW.game, 4000)
+        console.log("Did you get it Right or Wrong? " + response)
+
+        if ( response === "right" ) {
+            $("#graphics").append("<h2>Correct!</h2>")
+        } else if ( response === "wrong" ) {
+            $("#graphics").append("<h2>Wrong!</h2>")
+        }
+
+        if ( laW.qP === 0 ) {
+            $("#graphics").append("In Idaho, cannibalism is punishable by up to 14 years in prison, except under \"life threatening conditions\".<br><br><img src=\"https://media.giphy.com/media/3o7TKyVWXoZoW58t9e/giphy.gif\">")
+        } else if ( laW.qP === 1 ) {
+            $("#graphics").append("In Florida, business owners may be fined up to $1,000 for permitting a contest of dwarf-tossing.<br><br>I<img src=\"https://media.giphy.com/media/nCgACH5pP1Ias/giphy.gif\">")
+        } else if ( laW.qP === 2 ) {
+            $("#graphics").append("In Kentucky, it is illegal to hold public office if you have fought in a duel with deadly weapons.<br><br><img src=\"https://media.giphy.com/media/C41yP1w3Pe0la/giphy.gif\">")
+        } else if ( laW.qP === 3 ) {
+            $("#graphics").append("In Iowa, it is illegal to pass off <u>Margarine</u> as real <u>Butter</u>. It must be labeled \"Renovated Butter\".<br><br><img src=\"https://media.giphy.com/media/nQYnLFII2sFcQ/giphy.gif\">")
+        } else if ( laW.qP === 4 ) {
+            $("#graphics").append("In New Hampshire, it is illegal to collect seaweed at night.<br><br><img src=\"https://media.giphy.com/media/l3q2YZJj7ss1MjOwM/giphy.gif\">")
+        }  else if ( laW.qP === 5 ) {
+            $("#graphics").append("In North Carolina, a bingo game must not last more than 5 hours, unless it\'s ran by non-profit organization.<br><br><img src=\"https://media.giphy.com/media/l2JhowdrRUIAAzwMU/giphy.gif\">")
+        }  else if ( laW.qP === 6 ) {
+            $("#graphics").append("In South Dakota, farmers are permitted to use explosives, and fireworks to protect sunflower crops.<br><br><img src=\"https://media.giphy.com/media/rK0Q7ndEM194I/giphy.gif\">")
+        }  else if ( laW.qP === 7 ) {
+            $("#graphics").append("In Vermont, it is actually illegal to <u>prohibit</u> hanging a clothesline! A clothesline is considered a renewable engergy device.<br><br><img src=\"https://media.giphy.com/media/1X0xKtoeC0L8Q/giphy.gif\">")
+        }  else if ( laW.qP === 8 ) {
+            $("#graphics").append("In West Virginia, it is illegal to substitute a hunting dog for a ferret.<br><br><img src=\"https://media.giphy.com/media/pPJQvpK6Xslzy/giphy.gif\">")
+        }  else if ( laW.qP === 9 ) {
+            $("#graphics").append("In Arizona, it is illegal to feed garbage to pigs without a permit, unless you are raising the pig for your own consumption.<br><br><img src=\"https://media.giphy.com/media/xTk9ZvQTzdXx4GE9WM/giphy.gif\">")
+        } 
+        $("#graphics").delay(5050).fadeOut(1050)
+
+        if ( laW.questionsAsked.length === 10 ) {
+            console.log("timeOuts: " + laW.timeOuts)
+            console.log("We are going to the Report")
+            setTimeout(laW.gameReport, 7000)
+        } else {
+            setTimeout(laW.game, 7000)
+        }
+        
     },
 
     gameReport: function() {
         //Take out the Game Containers
-        $("#clock-container, #question-container, #button-container").fadeOut(2000)
+        $("#clock-container, #question-container, #button-container").fadeOut(1050)
         laW.gamePhase = false;
         clearInterval(laW.timeCounter)
         $("#report").text("How Well Do You Know Your Laws??")
         $("#report").append("<div class=\"results\">" + "Your Correct Answers: " + laW.correctAnswers + "</div>")
         $("#report").append("<div class=\"results\">" + "Your Wrong Answers: " + laW.incorrectAnswers + "</div>")
-        $("#report").append("<div class=\"results\">" + "Your \"I Didn\'t Even Tries\": " + laW.timeOuts + "</div>")
+        $("#report").append("<div class=\"results\">" + "Your \"I Didn\'t Even Tries\": " + laW.timeOuts + "</div><br>")
         $("#report").append("<button id=\"restart\">TRY AGAIN</button>")
         //Bring in the Report Container
-        $("#report-container").delay().fadeIn(2000)
+        $("#report-container").delay().fadeIn(1050)
         laW.questionsAsked = []
         
     },
@@ -204,7 +239,7 @@ $(document).ready(function() {
 
     $("body").append("<header class=\"jumbotron jumbotron-fluid\">");
     $(".jumbotron").append("<div class=\"container\" id=\"jumbo\">");
-    $("#jumbo").append("<h1 class=\"display-3\">Guess That Law!</h1>", "<p class=\"lead\">The funnest trivia game you've never heard of.</p>");
+    $("#jumbo").append("<h1 class=\"display-3\">Guess Who Made That Law!</h1>", "<p class=\"lead\">The funniest trivia game you've never heard of.</p>");
 
     $("body").append("<section class=\"container\">");
     $("section").append("<div class=\"row\" id=\"clock-container\">");
@@ -230,16 +265,17 @@ $("body").on("click", "button.start-game", function() {
     $("main").append("<div class=\"row\" id=\"button-container\">");
     $("#button-container").append("<div class=\"col-12\" id=\"button-column\">");
     $("#button-column").append("<button id=\"choiceA\">", "<button id=\"choiceB\">", "<button id=\"choiceC\">", "<button id=\"choiceD\">");
+    $("#button-container").append("<div class=\"col-12\" id=\"graphics\">");
 
     $("main").append("<div class=\"row\" id=\"report-container\">");
     $("#report-container").append("<div class=\"col-12\" id=\"report\">");
     $("report-container").fadeOut(0);
     
-    $("#clock-container, #question-container, #button-container").fadeOut(0);
+    $("#clock-container, #question-container, #button-container, #graphics").fadeOut(0);
 
     console.log("We are Starting the Game");
     $("#start-container").fadeOut(0);
-    $("#clock-container, #question-container, #button-container").fadeIn(2000);
+    $("#clock-container, #question-container, #button-container").fadeIn(1050);
 
     laW.game()
     
@@ -248,47 +284,34 @@ $("body").on("click", "button.start-game", function() {
 //The button click events wait for the user to make a choice, and run the appropriate check function to see if the user is right.
 
 $("body").on("click", "#choiceA", function() {
-    if ( laW.questionsAsked.length === 10 ) {
-        console.log("We are going to the Report")
-        laW.gameReport()
-    } else {
-        laW.checkA()
-    }
+
+    laW.checkA()
     
 });
 
 $("body").on("click", "#choiceB", function() {
-    if ( laW.questionsAsked.length === 10 ) {
-        console.log("We are going to the Report")
-        laW.gameReport()
-    } else {
-        laW.checkB()
-    }
+    
+    laW.checkB()
+
 });
 
 $("body").on("click", "#choiceC", function() {
-    if ( laW.questionsAsked.length === 10 ) {
-        console.log("We are going to the Report")
-        laW.gameReport()
-    } else {
-        laW.checkC()
-    }
+    
+    laW.checkC()
+
 });
 
 $("body").on("click", "#choiceD", function() {
-    if ( laW.questionsAsked.length === 10 ) {
-        console.log("We are going to the Report")
-        laW.gameReport()
-    } else {
-        laW.checkD()
-    }
+    
+    laW.checkD()
+
 });
 
 $("body").on("click", "#restart", function() {
     console.log("Game is Going to Restart Soon")
-    setTimeout(laW.game, 2000)
+    setTimeout(laW.game, 1050)
     laW.gameRestart = false
-    $("#report-container").fadeOut(2000)
-    $("#clock-container, #question-container, #button-container").delay(2000).fadeIn(2000)
+    $("#report-container").fadeOut(1050)
+    $("#clock-container, #question-container, #button-container").delay(1050).fadeIn(1050)
 });
 
