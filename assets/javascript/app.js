@@ -239,11 +239,11 @@ $(document).ready(function() {
 
     $("body").append("<header class=\"jumbotron jumbotron-fluid\">");
     $(".jumbotron").append("<div class=\"container\" id=\"jumbo\">");
-    $("#jumbo").append("<h1 class=\"display-3\">Guess Who Made That Law!</h1>", "<p class=\"lead\">The funniest trivia game you've never heard of.</p>");
+    $("#jumbo").append("<h1 class=\"display-3\">Guess  Who  Made  That  Law!</h1>", "<p class=\"lead\">The funniest trivia game you've never heard of.</p>");
 
     $("body").append("<section class=\"container\">");
     $("section").append("<div class=\"row\" id=\"clock-container\">");
-    $("#clock-container").append("<div class=\"col-12\" id=\"clock\">");
+    $("#clock-container").append("<div class=\"col-12\" id=\"clock\">").fadeOut(0);
     
 
     $("body").append("<main class=\"container\">");
@@ -271,7 +271,7 @@ $("body").on("click", "button.start-game", function() {
     $("#report-container").append("<div class=\"col-12\" id=\"report\">");
     $("report-container").fadeOut(0);
     
-    $("#clock-container, #question-container, #button-container, #graphics").fadeOut(0);
+    $("#question-container, #button-container, #graphics").fadeOut(0);
 
     console.log("We are Starting the Game");
     $("#start-container").fadeOut(0);
@@ -314,4 +314,5 @@ $("body").on("click", "#restart", function() {
     $("#report-container").fadeOut(1050)
     $("#clock-container, #question-container, #button-container").delay(1050).fadeIn(1050)
 });
+
 

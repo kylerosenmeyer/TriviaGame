@@ -1,6 +1,9 @@
 body {
     margin: auto;
     text-align: center;
+    background-image: url("../images/paper_fibers.png");
+    color: rgb(71, 54, 54);
+    font-family: 'Old Standard TT', serif;
 }
 
 p {
@@ -9,24 +12,74 @@ p {
 
 .jumbotron, .jumbotron-fluid {
     padding: 0px auto;
-    background-color: palegreen;
-    color: rgb(90, 130, 145);
-    text-shadow: 1px 1px 1px rgb(75, 90, 90);
+    background-image: url("../images/large_leather.jpg");
+    color: whitesmoke;
+    text-shadow: 2px 2px 2px whitesmoke;
+    font-family: 'Playball', cursive;
+    box-shadow: 
+        0px 3px 3px 3px rgba(169, 169, 169, 0.8),
+        0px 5px 0px 5px whitesmoke,
+        0px 8px 8px 8px rgba(169, 169, 169, 0.8),
+        0px 10px 0px 10px whitesmoke,
+        0px 13px 13px 13px rgba(169, 169, 169, 0.8),
+        0px 15px 0px 15px whitesmoke,
+        0px 17px 17px 17px rgba(169, 169, 169, 0.8),
+        0px 20px 0px 20px rgb(53, 40, 40),
+        0px 22px 22px 22px rgba(169, 169, 169, 0.8);
+    border-bottom: 10px ridge rgb(71, 54, 54, 0.9);
+}
+
+.lead {
+    text-shadow: none;
+    font-family: 'Bangers', cursive;
 }
 
 .results {
     font-size: 25px;
+    font-family: 'Luckiest Guy', cursive;
+}
+
+.start-game {
+    padding: 50px 10px;
+    font-size: 30px;
+    font-family: 'Playball', cursive;
+    border: 1px groove rgb(71, 54, 54, 0.9);
+    background-image: url("../images/paper_fibers.png");
+}
+@keyframes btn-hover {
+    0% {box-shadow: none}
+    100% {box-shadow: 0px 0px 15px 15px rgb(71, 54, 54, 0.9);}
+}
+
+button:hover {
+    animation-name: btn-hover;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+button:focus {
+    outline: none;
+}
+
+#start-container {
+    margin-top: 50px;
+    padding: 30px;
 }
 
 #clock {
+    display: block;
+    width: 30%;
     padding: 10px 20px;
-    margin-bottom: 10px;
+    margin: 30px auto 10px;
     font-size: 30px;
-    height: 50px;
+    height: 70px;
+    border: 3px solid rgb(71, 54, 54);
+    border-style: groove;
+    border-radius: -10px;
+    font-family: 'Lobster Two', cursive;
 }
 
 #question, #report, #graphics {
-    width: 100%;
     font-size: 25px;
     padding: 10px 20px;
     margin-bottom: 30px;
@@ -37,6 +90,13 @@ p {
     padding: 20px;
     width: 30%;
     margin: 0px auto 20px;
+    border: 1px groove rgb(71, 54, 54, 0.9);
+    background-image: url("../images/paper_fibers.png");
+    font-size: 20px;
+}
+
+#graphics {
+    font-family: 'Luckiest Guy', cursive;
 }
 
 
