@@ -47,6 +47,7 @@ p {
         0px -20px 0px 20px rgb(53, 40, 40),
         0px -22px 22px 22px rgba(169, 169, 169, 0.8);
     border-top: 8px solid rgb(71, 54, 54, 0.9);
+    margin-top: 30px;
 }
 
 .lead {
@@ -61,12 +62,13 @@ p {
 }
 
 .start-game {
-    margin-top: 20px;
+    margin-top: 50px;
     padding: 50px 10px;
     font-size: 30px;
     font-family: 'Playball', cursive;
     border: 1px groove rgb(71, 54, 54, 0.9);
     background-image: url("../images/paper_fibers.png");
+    z-index: -1;
 }
 
 .gif {
@@ -258,14 +260,21 @@ button:hover {
     animation-timing-function: ease-in;
 }
 
+.start-game:touch {
+    animation-name: start-hover;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+}
+
 
 button:focus {
     outline: none;
 }
 
-#start-container {
-    margin-top: 60px;
-    padding: 30px;
+#start-column {
+    margin: 10px auto;
+    padding: 20px;
 }
 
 #footer-space {
@@ -276,7 +285,7 @@ button:focus {
     display: block;
     width: 30%;
     padding: 10px 20px;
-    margin: 30px auto 10px;
+    margin: 40px auto 10px;
     font-size: 30px;
     height: 70px;
     border: 6px inset rgb(71, 54, 54);
@@ -284,6 +293,7 @@ button:focus {
     box-shadow: 
         0px 0px 0px 8px rgb(71, 54, 54, 0.9),
         5px 5px 5px 5px rgb(71, 54, 54, 0.9);
+    text-align: center;
 
 }
 
@@ -301,6 +311,7 @@ button:focus {
     border: 1px groove rgb(71, 54, 54, 0.9);
     background-image: url("../images/paper_fibers.png");
     font-size: 20px;
+    text-align: center;
 }
 
 #graphics-title {
@@ -311,8 +322,8 @@ button:focus {
 
 #graphics-content {
     font-size: 25px;
-    padding: 0px;
-    width: 100%;
+    padding: 0% 2.5%;
+    width: 95%;
     margin: 0%;
 }
 
@@ -328,8 +339,21 @@ button:focus {
 @media screen and (max-width: 600px) {
     .gif {
         width: 90%;
-        margin: 0% 5%;
+        margin: 0% 2% 0% 3%;
     }
+
+    #clock, #choiceA, #choiceB, #choiceC, #choiceD {
+        width: 50%;
+    }
+
+    #restart {
+        margin-bottom: 50px;
+    }
+
+    .start-game {
+        margin: 5% auto 30%;
+    }
+
 }
 
 

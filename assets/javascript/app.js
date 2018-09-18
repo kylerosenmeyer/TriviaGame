@@ -19,6 +19,8 @@ var laW = {
         ["In this state, you can be fined for skiing more than 25 mph without a shirt on.", "Vermont", "Alaska", "Idaho", "That\'s Made UP!"],
         ["In this state, it is illegal to substitute a hunting dog for a ferret.", "Wyoming", "West Virginia", "Arkansas", "That\'s Made UP!"],
         ["In this state, it is illegal to feed garbage to pigs without a permit, unless you are raising the pig for your own consumption.", "Missouri", "Arizona", "North Carolina", "That\'s Made UP!"],
+        ["In this state, there is a law on the books banning driving while blindfolded.", "New Mexico", "Maine", "Alabama", "That\'s Made UP!"],
+        ["In this state, it is illegal to throw a pizza at someone.", "New York", "Louisiana", "Illinois", "That\'s Made UP!"],
     ],
 
     // Setup initial variables. correctAnswers, incorrectAnswers, and timeOuts are used for the final report. 
@@ -47,7 +49,7 @@ var laW = {
             laW.minutes = "00:0"
             $("#clock").css("color", "red").css("font-weight", "bold")
         }
-        $("#clock").text(laW.minutes + laW.seconds)
+        $("#clock").text(" " + laW.minutes + laW.seconds + " ")
         laW.seconds--
 
         //If the clock runs out, add one to the incorret answers and go to break.
@@ -91,7 +93,7 @@ var laW = {
 
         //The second step is to pull a random question, and make sure it hasn't been shown yet. The timer starts once a "new" question is found.
 
-        laW.qP = Math.floor(Math.random()*10 )
+        laW.qP = Math.floor(Math.random()*laW.questionBank.length )
 
         if ( laW.questionsAsked.indexOf(laW.qP) !== -1 ) {
             laW.game()
@@ -144,7 +146,7 @@ var laW = {
 
     checkC: function() {
         console.log("You chose C")
-        if ( ( this.qP === 5) || ( this.qP === 6 ) ) {
+        if ( ( this.qP === 5) || ( this.qP === 6 ) || ( this.qP === 10 ) ) {
             clearInterval(laW.timeCounter)
             this.correctAnswers++
             this.gameBreak("right")
@@ -157,7 +159,7 @@ var laW = {
 
     checkD: function() {
         console.log("You chose D")
-        if ( ( this.qP === 3) || ( this.qP === 7 ) ) {
+        if ( ( this.qP === 3) || ( this.qP === 7 ) || ( this.qP === 11) ) {
             clearInterval(laW.timeCounter)
             this.correctAnswers++
             this.gameBreak("right")
@@ -190,32 +192,36 @@ var laW = {
 
         //Display the correct answer response and graphic for the question.
         if ( laW.qP === 0 ) {
-            $("#graphics-content").append("In Idaho, cannibalism is punishable by up to 14 years in prison, except under \"life threatening conditions\".<br><br><img class=\"gif\" src=\"https://media.giphy.com/media/3o7TKyVWXoZoW58t9e/giphy.gif\">")
+            $("#graphics-content").append("In Idaho, cannibalism is punishable by up to 14 years in prison, except under \"life threatening conditions\" Pick your hiking buddy carefully!<br><br><img class=\"gif\" src=\"https://media.giphy.com/media/3o7TKyVWXoZoW58t9e/giphy.gif\">")
         } else if ( laW.qP === 1 ) {
-            $("#graphics-content").append("In Florida, business owners may be fined up to $1,000 for permitting a contest of dwarf-tossing.<br><br>I<img class=\"gif\" src=\"https://media.giphy.com/media/nCgACH5pP1Ias/giphy.gif\">")
+            $("#graphics-content").append("In Florida, business owners may be fined up to $1,000 for permitting a contest of dwarf-tossing. You thought it was New York, didn't you?<br><br>I<img class=\"gif\" src=\"https://media.giphy.com/media/nCgACH5pP1Ias/giphy.gif\">")
         } else if ( laW.qP === 2 ) {
-            $("#graphics-content").append("In Kentucky, it is illegal to hold public office if you have fought in a duel with deadly weapons.<br><br><img class=\"gif\" src=\"https://media.giphy.com/media/C41yP1w3Pe0la/giphy.gif\">")
+            $("#graphics-content").append("In Kentucky, it is illegal to hold public office if you have fought in a duel with deadly weapons. Only passive aggression is allowed from politicians!<br><br><img class=\"gif\" src=\"https://media.giphy.com/media/C41yP1w3Pe0la/giphy.gif\">")
         } else if ( laW.qP === 3 ) {
             $("#graphics-content").append("That\'s MADE up! But you might wanna know, that in Iowa, it is illegal to pass off <u>Margarine</u> as real <u>Butter</u>. It must be labeled \"Renovated Butter\".<br><br><img class=\"gif\" src=\"https://media.giphy.com/media/nQYnLFII2sFcQ/giphy.gif\">")
         } else if ( laW.qP === 4 ) {
-            $("#graphics-content").append("In New Hampshire, it is illegal to collect seaweed at night.<br><br><img class=\"gif\" src=\"https://media.giphy.com/media/l3q2YZJj7ss1MjOwM/giphy.gif\">")
+            $("#graphics-content").append("In New Hampshire, it is illegal to collect seaweed at night. But why??<br><br><img class=\"gif\" src=\"https://media.giphy.com/media/l3q2YZJj7ss1MjOwM/giphy.gif\">")
         }  else if ( laW.qP === 5 ) {
-            $("#graphics-content").append("In North Carolina, a bingo game must not last more than 5 hours, unless it\'s ran by non-profit organization.<br><br><img class=\"gif\" src=\"https://media.giphy.com/media/l2JhowdrRUIAAzwMU/giphy.gif\">")
+            $("#graphics-content").append("In North Carolina, a bingo game must not last more than 5 hours, unless it\'s ran by non-profit organization. It's dangerous to play games for a long time without a break you know.<br><br><img class=\"gif\" src=\"https://media.giphy.com/media/l2JhowdrRUIAAzwMU/giphy.gif\">")
         }  else if ( laW.qP === 6 ) {
-            $("#graphics-content").append("In South Dakota, farmers are permitted to use explosives, and fireworks to protect sunflower crops.<br><br><img class=\"gif\" src=\"https://media.giphy.com/media/rK0Q7ndEM194I/giphy.gif\">")
+            $("#graphics-content").append("In South Dakota, farmers are permitted to use explosives, and fireworks to protect sunflower crops. Get off my farm! <br><br><img class=\"gif\" src=\"https://media.giphy.com/media/rK0Q7ndEM194I/giphy.gif\">")
         }  else if ( laW.qP === 7 ) {
-            $("#graphics-content").append("That\'s MADE up! But you might wanna know, that in Vermont, it is illegal to prohibit solar panels and clotheslines! Talk about dedication to reneawable energy!<br><br><img class=\"gif\" src=\"https://media.giphy.com/media/1X0xKtoeC0L8Q/giphy.gif\">")
+            $("#graphics-content").append("That\'s MADE up! But you might wanna know, that in Vermont, it is illegal to prohibit solar panels and clotheslines! Talk about dedication to reneweable energy!<br><br><img class=\"gif\" src=\"https://media.giphy.com/media/1X0xKtoeC0L8Q/giphy.gif\">")
         }  else if ( laW.qP === 8 ) {
-            $("#graphics-content").append("In West Virginia, it is illegal to substitute a hunting dog for a ferret.<br><br><img class=\"gif\" src=\"https://media.giphy.com/media/pPJQvpK6Xslzy/giphy.gif\">")
+            $("#graphics-content").append("In West Virginia, it is illegal to substitute a hunting dog for a ferret. This right here is a hunting ferret, woof woof.<br><br><img class=\"gif\" src=\"https://media.giphy.com/media/pPJQvpK6Xslzy/giphy.gif\">")
         }  else if ( laW.qP === 9 ) {
-            $("#graphics-content").append("In Arizona, it is illegal to feed garbage to pigs without a permit, unless you are raising the pig for your own consumption.<br><br><img class=\"gif\" src=\"https://media.giphy.com/media/xTk9ZvQTzdXx4GE9WM/giphy.gif\">")
+            $("#graphics-content").append("In Arizona, it is illegal to feed garbage to pigs without a permit, unless you are raising the pig for your own consumption. <u>Bacon is Bacon.</u><br><br><img class=\"gif\" src=\"https://media.giphy.com/media/xTk9ZvQTzdXx4GE9WM/giphy.gif\">")
+        }  else if ( laW.qP === 10 ) {
+            $("#graphics-content").append("In Alabama, it is illegal to drive blindfolded. Keep your eyes on the road, duh!<br><br><img class=\"gif\" src=\"https://media.giphy.com/media/rW93tN5vISkjC/giphy.gif\">")
+        }  else if ( laW.qP === 11 ) {
+            $("#graphics-content").append("That\s MADE up! But you should know, that in Louisiana, it is illegal to surprise someone with a pizza. Plan ahead!<br><br><img class=\"gif\" src=\"https://media.giphy.com/media/3o7bu2E3Bp1GhOdTmU/giphy.gif\">")
         } 
 
         //Take the graphics back out.
         $("#graphics-title, #graphics-content").delay(8050).fadeOut(1050)
 
         //Check before going back to the game if we have run out of questions. If true, run the game Report.
-        if ( laW.questionsAsked.length === 10 ) {
+        if ( laW.questionsAsked.length === laW.questionBank.length ) {
             console.log("timeOuts: " + laW.timeOuts)
             console.log("We are going to the Report")
             setTimeout(laW.gameReport, 10000)
@@ -237,7 +243,7 @@ var laW = {
 
         //append the report items to the page.
         $("#report").text("How Well Do You Know Your Laws??")
-        $("#report").append("<div class=\"results\" id=\"score-percent\">You got: " +  laW.correctAnswers / 10 * 100 + "%</div>")
+        $("#report").append("<div class=\"results\" id=\"score-percent\">You got: " +  laW.correctAnswers / laW.questionBank.length * 100 + "%</div>")
         $("#report").append("<div class=\"results\">" + "That Is " + laW.correctAnswers + " Correct Answers</div>")
         $("#report").append("<div class=\"results\">" + "And " + laW.incorrectAnswers + " Wrong Answers</div>")
         $("#report").append("<button id=\"restart\">TRY AGAIN</button>")
