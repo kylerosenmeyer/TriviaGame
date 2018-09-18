@@ -12,9 +12,9 @@ p {
 
 .jumbotron, .jumbotron-fluid {
     padding: 0px auto;
-    background-image: url("../images/large_leather.jpg");
+    background-image: url("../images/brown-leather.jpg");
     color: whitesmoke;
-    text-shadow: 2px 2px 2px whitesmoke;
+    text-shadow: 2px 2px 4px whitesmoke;
     font-family: 'Playball', cursive;
     box-shadow: 
         0px 3px 3px 3px rgba(169, 169, 169, 0.8),
@@ -26,10 +26,31 @@ p {
         0px 17px 17px 17px rgba(169, 169, 169, 0.8),
         0px 20px 0px 20px rgb(53, 40, 40),
         0px 22px 22px 22px rgba(169, 169, 169, 0.8);
-    border-bottom: 10px ridge rgb(71, 54, 54, 0.9);
+    border-bottom: 8px solid rgb(71, 54, 54, 0.9);
+}
+
+.jumbo-bottom {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding: 20px auto;
+    background-image: url("../images/brown-leather.jpg");
+    color: whitesmoke;
+    box-shadow: 
+        0px -3px 3px 3px rgba(169, 169, 169, 0.8),
+        0px -5px 0px 5px whitesmoke,
+        0px -8px 8px 8px rgba(169, 169, 169, 0.8),
+        0px -10px 0px 10px whitesmoke,
+        0px -13px 13px 13px rgba(169, 169, 169, 0.8),
+        0px -15px 0px 15px whitesmoke,
+        0px -17px 17px 17px rgba(169, 169, 169, 0.8),
+        0px -20px 0px 20px rgb(53, 40, 40),
+        0px -22px 22px 22px rgba(169, 169, 169, 0.8);
+    border-top: 8px solid rgb(71, 54, 54, 0.9);
 }
 
 .lead {
+    padding-top: 20px;
     text-shadow: none;
     font-family: 'Bangers', cursive;
 }
@@ -40,20 +61,87 @@ p {
 }
 
 .start-game {
+    margin-top: 20px;
     padding: 50px 10px;
     font-size: 30px;
     font-family: 'Playball', cursive;
     border: 1px groove rgb(71, 54, 54, 0.9);
     background-image: url("../images/paper_fibers.png");
 }
+
+.gif {
+    box-shadow: 
+        0px 0px 0px 8px rgb(71, 54, 54, 0.9),
+        5px 5px 5px 5px rgb(71, 54, 54, 0.9);
+    width: 50%;
+    border: 10px inset rgb(71, 54, 54);
+    margin-bottom: 30px;
+}
+
+.results {
+    font-size: 25px;
+    padding: 10px 0px;
+}
+
+.results:first-child {
+    margin-top: 20px;
+}
+
 @keyframes btn-hover {
     0% {box-shadow: none}
-    100% {box-shadow: 0px 0px 15px 15px rgb(71, 54, 54, 0.9);}
+    100% {box-shadow: 0px 0px 0px 8px rgb(71, 54, 54, 0.9)}
 }
 
 button:hover {
     animation-name: btn-hover;
     animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes start-hover {
+    0% {box-shadow: none}
+    18% {box-shadow: 
+        0px 0px 0px 8px rgb(71, 54, 54, 0.9);}
+    24% {box-shadow: 
+        0px 0px 0px 8px rgb(71, 54, 54, 0.9),
+        0px 0px 0px 16px rgba(255, 255, 255, 0.9);}
+    42% {box-shadow: 
+        0px 0px 0px 8px rgb(71, 54, 54, 0.9),
+        0px 0px 0px 16px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 24px rgb(71, 54, 54, 0.9);}
+    48% {box-shadow: 
+        0px 0px 0px 8px rgb(71, 54, 54, 0.9),
+        0px 0px 0px 16px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 24px rgb(71, 54, 54, 0.9),
+        0px 0px 0px 32px rgba(255, 255, 255, 0.9);}
+    66% {box-shadow: 
+        0px 0px 0px 8px rgb(71, 54, 54, 0.9),
+        0px 0px 0px 16px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 24px rgb(71, 54, 54, 0.9),
+        0px 0px 0px 32px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 40px rgb(71, 54, 54, 0.9);}
+    72% {box-shadow: 
+        0px 0px 0px 8px rgb(71, 54, 54, 0.9),
+        0px 0px 0px 16px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 24px rgb(71, 54, 54, 0.9),
+        0px 0px 0px 32px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 40px rgb(71, 54, 54, 0.9),
+        0px 0px 0px 48px rgba(255, 255, 255, 0.9);}
+    100% {box-shadow: 
+        0px 0px 0px 8px rgb(71, 54, 54, 0.9),
+        0px 0px 0px 16px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 24px rgb(71, 54, 54, 0.9),
+        0px 0px 0px 32px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 40px rgb(71, 54, 54, 0.9),
+        0px 0px 0px 48px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 56px rgb(71, 54, 54, 0.9),
+        0px 0px 70px 64px rgba(169, 169, 169, 0.8)}
+
+}
+
+.start-game:hover {
+    animation-name: start-hover;
+    animation-duration: 0.3s;
     animation-fill-mode: forwards;
 }
 
@@ -66,6 +154,10 @@ button:focus {
     padding: 30px;
 }
 
+#footer-space {
+    height: 10px;
+}
+
 #clock {
     display: block;
     width: 30%;
@@ -73,15 +165,17 @@ button:focus {
     margin: 30px auto 10px;
     font-size: 30px;
     height: 70px;
-    border: 3px solid rgb(71, 54, 54);
-    border-style: groove;
-    border-radius: -10px;
+    border: 6px inset rgb(71, 54, 54);
     font-family: 'Lobster Two', cursive;
+    box-shadow: 
+        0px 0px 0px 8px rgb(71, 54, 54, 0.9),
+        5px 5px 5px 5px rgb(71, 54, 54, 0.9);
+
 }
 
 #question, #report, #graphics {
     font-size: 25px;
-    padding: 10px 20px;
+    padding: 20px 20px;
     margin-bottom: 30px;
 }
 
@@ -95,8 +189,33 @@ button:focus {
     font-size: 20px;
 }
 
-#graphics {
+#graphics-title {
     font-family: 'Luckiest Guy', cursive;
+    font-size: 30px;
+    padding: 15px 0px;
+}
+
+#graphics-content {
+    font-size: 25px;
+    padding: 0px;
+    width: 100%;
+    margin: 0%;
+}
+
+#report {
+    margin-top: 30px;
+}
+
+#score-percent {
+    font-size: 40px;
+}
+
+
+@media screen and (max-width: 600px) {
+    .gif {
+        width: 90%;
+        margin: 0% 5%;
+    }
 }
 
 
