@@ -194,7 +194,7 @@ var laW = {
         if ( laW.qP === 0 ) {
             $("#graphics-content").append("In Idaho, cannibalism is punishable by up to 14 years in prison, except under \"life threatening conditions\" Pick your hiking buddy carefully!<br><br><img class=\"gif\" src=\"https://media.giphy.com/media/3o7TKyVWXoZoW58t9e/giphy.gif\">")
         } else if ( laW.qP === 1 ) {
-            $("#graphics-content").append("In Florida, business owners may be fined up to $1,000 for permitting a contest of dwarf-tossing. You thought it was New York, didn't you?<br><br>I<img class=\"gif\" src=\"https://media.giphy.com/media/nCgACH5pP1Ias/giphy.gif\">")
+            $("#graphics-content").append("In Florida, business owners may be fined up to $1,000 for permitting a contest of dwarf-tossing. You thought it was New York, didn't you?<br><br><img class=\"gif\" src=\"https://media.giphy.com/media/nCgACH5pP1Ias/giphy.gif\">")
         } else if ( laW.qP === 2 ) {
             $("#graphics-content").append("In Kentucky, it is illegal to hold public office if you have fought in a duel with deadly weapons. Only passive aggression is allowed from politicians!<br><br><img class=\"gif\" src=\"https://media.giphy.com/media/C41yP1w3Pe0la/giphy.gif\">")
         } else if ( laW.qP === 3 ) {
