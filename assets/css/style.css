@@ -100,34 +100,47 @@ button:hover {
 
 @keyframes start-hover {
     0% {box-shadow: none}
-    18% {box-shadow: 
-        0px 0px 0px 8px rgb(71, 54, 54, 0.9);}
-    24% {box-shadow: 
+    10% {
+        box-shadow: 
+        0px 0px 0px 8px rgb(71, 54, 54, 0.9);
+    }
+    12% {
+        box-shadow: 
         0px 0px 0px 8px rgb(71, 54, 54, 0.9),
-        0px 0px 0px 16px rgba(255, 255, 255, 0.9);}
-    42% {box-shadow: 
+        0px 0px 0px 16px rgba(255, 255, 255, 0.9);
+    }
+    22% {
+        box-shadow: 
         0px 0px 0px 8px rgb(71, 54, 54, 0.9),
         0px 0px 0px 16px rgba(255, 255, 255, 0.9),
-        0px 0px 0px 24px rgb(71, 54, 54, 0.9);}
-    48% {box-shadow: 
+        0px 0px 0px 24px rgb(71, 54, 54, 0.9);
+    }
+    24% {
+        box-shadow: 
         0px 0px 0px 8px rgb(71, 54, 54, 0.9),
         0px 0px 0px 16px rgba(255, 255, 255, 0.9),
         0px 0px 0px 24px rgb(71, 54, 54, 0.9),
-        0px 0px 0px 32px rgba(255, 255, 255, 0.9);}
-    66% {box-shadow: 
+        0px 0px 0px 32px rgba(255, 255, 255, 0.9);
+    }
+    34% {
+        box-shadow: 
         0px 0px 0px 8px rgb(71, 54, 54, 0.9),
         0px 0px 0px 16px rgba(255, 255, 255, 0.9),
         0px 0px 0px 24px rgb(71, 54, 54, 0.9),
         0px 0px 0px 32px rgba(255, 255, 255, 0.9),
-        0px 0px 0px 40px rgb(71, 54, 54, 0.9);}
-    72% {box-shadow: 
+        0px 0px 0px 40px rgb(71, 54, 54, 0.9);
+    }
+    36% {
+        box-shadow: 
         0px 0px 0px 8px rgb(71, 54, 54, 0.9),
         0px 0px 0px 16px rgba(255, 255, 255, 0.9),
         0px 0px 0px 24px rgb(71, 54, 54, 0.9),
         0px 0px 0px 32px rgba(255, 255, 255, 0.9),
         0px 0px 0px 40px rgb(71, 54, 54, 0.9),
-        0px 0px 0px 48px rgba(255, 255, 255, 0.9);}
-    100% {box-shadow: 
+        0px 0px 0px 48px rgba(255, 255, 255, 0.9);
+    }
+    45% {
+        box-shadow: 
         0px 0px 0px 8px rgb(71, 54, 54, 0.9),
         0px 0px 0px 16px rgba(255, 255, 255, 0.9),
         0px 0px 0px 24px rgb(71, 54, 54, 0.9),
@@ -135,22 +148,123 @@ button:hover {
         0px 0px 0px 40px rgb(71, 54, 54, 0.9),
         0px 0px 0px 48px rgba(255, 255, 255, 0.9),
         0px 0px 0px 56px rgb(71, 54, 54, 0.9),
-        0px 0px 70px 64px rgba(169, 169, 169, 0.8)}
-
+        0px 0px 70px 64px rgba(65, 167, 61, 0.8);
+        border-radius: none;
+    }
+    47% {
+        box-shadow: 
+        0px 0px 0px 8px rgb(71, 54, 54, 0.9),
+        0px 0px 0px 16px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 24px rgb(71, 54, 54, 0.9),
+        0px 0px 0px 32px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 40px rgb(71, 54, 54, 0.9),
+        0px 0px 0px 48px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 56px rgba(255, 255, 255, 0.9),
+        0px 0px 70px 64px rgba(65, 167, 61, 0.8);
+        border-radius: 8px;
+    }
+    65% {
+        box-shadow: 
+        0px 0px 0px 8px rgb(71, 54, 54, 0.9),
+        0px 0px 0px 16px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 24px rgb(71, 54, 54, 0.9),
+        0px 0px 0px 32px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 40px rgb(71, 54, 54, 0.9),
+        0px 0px 0px 48px rgba(65, 167, 61, 0.8),
+        0px 0px 0px 56px rgba(255, 255, 255, 0.9),
+        0px 0px 70px 64px rgba(65, 167, 61, 0.8);
+        border-radius: 16px;
+    }
+    68% {
+        box-shadow: 
+        0px 0px 0px 8px rgb(71, 54, 54, 0.9),
+        0px 0px 0px 16px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 24px rgb(71, 54, 54, 0.9),
+        0px 0px 0px 32px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 40px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 48px rgba(65, 167, 61, 0.8),
+        0px 0px 0px 56px rgba(255, 255, 255, 0.9),
+        0px 0px 70px 64px rgba(65, 167, 61, 0.8);
+        border-radius: 24px;
+    }
+    77% {
+        box-shadow: 
+        0px 0px 0px 8px rgb(71, 54, 54, 0.9),
+        0px 0px 0px 16px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 24px rgb(71, 54, 54, 0.9),
+        0px 0px 0px 32px rgba(65, 167, 61, 0.8),
+        0px 0px 0px 40px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 48px rgba(65, 167, 61, 0.8),
+        0px 0px 0px 56px rgba(255, 255, 255, 0.9),
+        0px 0px 70px 64px rgba(65, 167, 61, 0.8);
+        border-radius: 32px;
+    }
+    80% {
+        box-shadow: 
+        0px 0px 0px 8px rgb(71, 54, 54, 0.9),
+        0px 0px 0px 16px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 24px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 32px rgba(65, 167, 61, 0.8),
+        0px 0px 0px 40px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 48px rgba(65, 167, 61, 0.8),
+        0px 0px 0px 56px rgba(255, 255, 255, 0.9),
+        0px 0px 70px 64px rgba(65, 167, 61, 0.8);
+        border-radius: 40px;
+    }
+    89% {
+        box-shadow: 
+        0px 0px 0px 8px rgb(71, 54, 54, 0.9),
+        0px 0px 0px 16px rgba(65, 167, 61, 0.8),
+        0px 0px 0px 24px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 32px rgba(65, 167, 61, 0.8),
+        0px 0px 0px 40px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 48px rgba(65, 167, 61, 0.8),
+        0px 0px 0px 56px rgba(255, 255, 255, 0.9),
+        0px 0px 70px 64px rgba(65, 167, 61, 0.8);
+        border-radius: 48px;
+    }
+    98% {
+        box-shadow: 
+        0px 0px 0px 8px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 16px rgba(65, 167, 61, 0.8),
+        0px 0px 0px 24px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 32px rgba(65, 167, 61, 0.8),
+        0px 0px 0px 40px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 48px rgba(65, 167, 61, 0.8),
+        0px 0px 0px 56px rgba(255, 255, 255, 0.9),
+        0px 0px 70px 64px rgba(65, 167, 61, 0.8);
+        background-image: url("../images/paper_fibers.png");
+        border-radius: 56px;
+    }
+    100% {
+        box-shadow: 
+        0px 0px 0px 8px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 16px rgba(65, 167, 61, 0.8),
+        0px 0px 0px 24px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 32px rgba(65, 167, 61, 0.8),
+        0px 0px 0px 40px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 48px rgba(65, 167, 61, 0.8),
+        0px 0px 0px 56px rgba(255, 255, 255, 0.9),
+        0px 0px 70px 64px rgba(65, 167, 61, 0.8);
+        background-image: url("../images/green-paper_fibers.jpg");
+        border-radius: 70px;
+    }
 }
 
 .start-game:hover {
     animation-name: start-hover;
-    animation-duration: 0.3s;
+    animation-duration: 0.7s;
     animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
 }
+
 
 button:focus {
     outline: none;
 }
 
 #start-container {
-    margin-top: 50px;
+    margin-top: 60px;
     padding: 30px;
 }
 
