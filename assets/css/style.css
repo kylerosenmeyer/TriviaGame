@@ -348,6 +348,7 @@ button:focus {
 
     #restart {
         margin-bottom: 50px;
+        width: 50%;
     }
 
     .start-game {
