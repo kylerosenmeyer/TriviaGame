@@ -273,7 +273,7 @@ button:focus {
 }
 
 #start-column {
-    margin: 10px auto;
+    margin: 30px auto;
     padding: 20px;
 }
 
@@ -347,12 +347,12 @@ button:focus {
     }
 
     #restart {
-        margin-bottom: 50px;
+        margin-bottom: 100px;
         width: 50%;
     }
 
     .start-game {
-        margin: 5% auto 30%;
+        margin: 2% auto 40%;
     }
 
 }

@@ -214,7 +214,7 @@ var laW = {
         }  else if ( laW.qP === 10 ) {
             $("#graphics-content").append("In Alabama, it is illegal to drive blindfolded. Keep your eyes on the road, duh!<br><br><img class=\"gif\" src=\"https://media.giphy.com/media/rW93tN5vISkjC/giphy.gif\">")
         }  else if ( laW.qP === 11 ) {
-            $("#graphics-content").append("That\s MADE up! But you should know, that in Louisiana, it is illegal to surprise someone with a pizza. Plan ahead!<br><br><img class=\"gif\" src=\"https://media.giphy.com/media/3o7bu2E3Bp1GhOdTmU/giphy.gif\">")
+            $("#graphics-content").append("That\'s MADE up! But you should know, that in Louisiana, it is illegal to surprise someone with a pizza. Plan ahead!<br><br><img class=\"gif\" src=\"https://media.giphy.com/media/3o7bu2E3Bp1GhOdTmU/giphy.gif\">")
         } 
 
         //Take the graphics back out.
@@ -243,7 +243,7 @@ var laW = {
 
         //append the report items to the page.
         $("#report").text("How Well Do You Know Your Laws??")
-        $("#report").append("<div class=\"results\" id=\"score-percent\">You got: " +  laW.correctAnswers / laW.questionBank.length * 100 + "%</div>")
+        $("#report").append("<div class=\"results\" id=\"score-percent\">You got: " +  Math.floor(laW.correctAnswers / laW.questionBank.length * 100) + "%</div>")
         $("#report").append("<div class=\"results\">" + "That Is " + laW.correctAnswers + " Correct Answers</div>")
         $("#report").append("<div class=\"results\">" + "And " + laW.incorrectAnswers + " Wrong Answers</div>")
         $("#report").append("<button id=\"restart\">TRY AGAIN</button>")
