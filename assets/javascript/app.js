@@ -328,25 +328,25 @@ $("body").on("click", "button.start-game", function() {
 
 //The button click events wait for the user to make a choice, and run the appropriate check function to see if the user is right.
 
-$("body").on("click", "#choiceA", function() {
+$("body").one("click", "#choiceA", function clickA() {
 
     laW.checkA()
     
 });
 
-$("body").on("click", "#choiceB", function() {
+$("body").one("click", "#choiceB", function() {
     
     laW.checkB()
 
 });
 
-$("body").on("click", "#choiceC", function() {
+$("body").one("click", "#choiceC", function() {
     
     laW.checkC()
 
 });
 
-$("body").on("click", "#choiceD", function() {
+$("body").one("click", "#choiceD", function() {
     
     laW.checkD()
 
@@ -354,7 +354,7 @@ $("body").on("click", "#choiceD", function() {
 
 
 //At the game end, get things ready to start the game again.
-$("body").on("click", "#restart", function() {
+$("body").one("click", "#restart", function() {
     console.log("Game is Going to Restart Soon")
     setTimeout(laW.game, 1050)
     $("#report-container").fadeOut(1050)

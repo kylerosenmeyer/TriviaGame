@@ -140,6 +140,7 @@ button:hover {
         0px 0px 0px 32px rgba(255, 255, 255, 0.9),
         0px 0px 0px 40px rgb(71, 54, 54, 0.9),
         0px 0px 0px 48px rgba(255, 255, 255, 0.9);
+        border-radius: none;
     }
     45% {
         box-shadow: 
@@ -150,8 +151,8 @@ button:hover {
         0px 0px 0px 40px rgb(71, 54, 54, 0.9),
         0px 0px 0px 48px rgba(255, 255, 255, 0.9),
         0px 0px 0px 56px rgb(71, 54, 54, 0.9),
-        0px 0px 70px 64px rgba(65, 167, 61, 0.8);
-        border-radius: none;
+        0px 0px 70px 64px rgba(169, 169, 169, 0.8);
+        border-radius: 8px;
     }
     47% {
         box-shadow: 
@@ -161,9 +162,9 @@ button:hover {
         0px 0px 0px 32px rgba(255, 255, 255, 0.9),
         0px 0px 0px 40px rgb(71, 54, 54, 0.9),
         0px 0px 0px 48px rgba(255, 255, 255, 0.9),
-        0px 0px 0px 56px rgba(255, 255, 255, 0.9),
-        0px 0px 70px 64px rgba(65, 167, 61, 0.8);
-        border-radius: 8px;
+        0px 0px 0px 56px rgb(71, 54, 54, 0.9),
+        0px 0px 70px 64px rgba(169, 169, 169, 0.8);
+        border-radius: 16px;
     }
     65% {
         box-shadow: 
@@ -172,10 +173,10 @@ button:hover {
         0px 0px 0px 24px rgb(71, 54, 54, 0.9),
         0px 0px 0px 32px rgba(255, 255, 255, 0.9),
         0px 0px 0px 40px rgb(71, 54, 54, 0.9),
-        0px 0px 0px 48px rgba(65, 167, 61, 0.8),
-        0px 0px 0px 56px rgba(255, 255, 255, 0.9),
-        0px 0px 70px 64px rgba(65, 167, 61, 0.8);
-        border-radius: 16px;
+        0px 0px 0px 48px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 56px rgb(71, 54, 54, 0.9),
+        0px 0px 70px 64px rgba(169, 169, 169, 0.8);
+        border-radius: 24px;
     }
     68% {
         box-shadow: 
@@ -183,73 +184,73 @@ button:hover {
         0px 0px 0px 16px rgba(255, 255, 255, 0.9),
         0px 0px 0px 24px rgb(71, 54, 54, 0.9),
         0px 0px 0px 32px rgba(255, 255, 255, 0.9),
-        0px 0px 0px 40px rgba(255, 255, 255, 0.9),
-        0px 0px 0px 48px rgba(65, 167, 61, 0.8),
-        0px 0px 0px 56px rgba(255, 255, 255, 0.9),
-        0px 0px 70px 64px rgba(65, 167, 61, 0.8);
-        border-radius: 24px;
+        0px 0px 0px 40px rgb(71, 54, 54, 0.9),
+        0px 0px 0px 48px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 56px rgb(71, 54, 54, 0.9),
+        0px 0px 70px 64px rgba(169, 169, 169, 0.8);
+        border-radius: 32px;
     }
     77% {
         box-shadow: 
         0px 0px 0px 8px rgb(71, 54, 54, 0.9),
         0px 0px 0px 16px rgba(255, 255, 255, 0.9),
         0px 0px 0px 24px rgb(71, 54, 54, 0.9),
-        0px 0px 0px 32px rgba(65, 167, 61, 0.8),
-        0px 0px 0px 40px rgba(255, 255, 255, 0.9),
-        0px 0px 0px 48px rgba(65, 167, 61, 0.8),
-        0px 0px 0px 56px rgba(255, 255, 255, 0.9),
-        0px 0px 70px 64px rgba(65, 167, 61, 0.8);
-        border-radius: 32px;
+        0px 0px 0px 32px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 40px rgb(71, 54, 54, 0.9),
+        0px 0px 0px 48px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 56px rgb(71, 54, 54, 0.9),
+        0px 0px 70px 64px rgba(169, 169, 169, 0.8);
+        border-radius: 40px;
     }
     80% {
         box-shadow: 
         0px 0px 0px 8px rgb(71, 54, 54, 0.9),
         0px 0px 0px 16px rgba(255, 255, 255, 0.9),
-        0px 0px 0px 24px rgba(255, 255, 255, 0.9),
-        0px 0px 0px 32px rgba(65, 167, 61, 0.8),
-        0px 0px 0px 40px rgba(255, 255, 255, 0.9),
-        0px 0px 0px 48px rgba(65, 167, 61, 0.8),
-        0px 0px 0px 56px rgba(255, 255, 255, 0.9),
-        0px 0px 70px 64px rgba(65, 167, 61, 0.8);
-        border-radius: 40px;
+        0px 0px 0px 24px rgb(71, 54, 54, 0.9),
+        0px 0px 0px 32px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 40px rgb(71, 54, 54, 0.9),
+        0px 0px 0px 48px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 56px rgb(71, 54, 54, 0.9),
+        0px 0px 70px 64px rgba(169, 169, 169, 0.8);
+        border-radius: 48px;
     }
     89% {
         box-shadow: 
         0px 0px 0px 8px rgb(71, 54, 54, 0.9),
-        0px 0px 0px 16px rgba(65, 167, 61, 0.8),
-        0px 0px 0px 24px rgba(255, 255, 255, 0.9),
-        0px 0px 0px 32px rgba(65, 167, 61, 0.8),
-        0px 0px 0px 40px rgba(255, 255, 255, 0.9),
-        0px 0px 0px 48px rgba(65, 167, 61, 0.8),
-        0px 0px 0px 56px rgba(255, 255, 255, 0.9),
-        0px 0px 70px 64px rgba(65, 167, 61, 0.8);
-        border-radius: 48px;
+        0px 0px 0px 16px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 24px rgb(71, 54, 54, 0.9),
+        0px 0px 0px 32px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 40px rgb(71, 54, 54, 0.9),
+        0px 0px 0px 48px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 56px rgb(71, 54, 54, 0.9),
+        0px 0px 70px 64px rgba(169, 169, 169, 0.8);
+        border-radius: 56px;
     }
     98% {
         box-shadow: 
-        0px 0px 0px 8px rgba(255, 255, 255, 0.9),
-        0px 0px 0px 16px rgba(65, 167, 61, 0.8),
-        0px 0px 0px 24px rgba(255, 255, 255, 0.9),
-        0px 0px 0px 32px rgba(65, 167, 61, 0.8),
-        0px 0px 0px 40px rgba(255, 255, 255, 0.9),
-        0px 0px 0px 48px rgba(65, 167, 61, 0.8),
-        0px 0px 0px 56px rgba(255, 255, 255, 0.9),
-        0px 0px 70px 64px rgba(65, 167, 61, 0.8);
+        0px 0px 0px 8px rgb(71, 54, 54, 0.9),
+        0px 0px 0px 16px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 24px rgb(71, 54, 54, 0.9),
+        0px 0px 0px 32px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 40px rgb(71, 54, 54, 0.9),
+        0px 0px 0px 48px rgba(255, 255, 255, 0.9),
+        0px 0px 0px 56px rgb(71, 54, 54, 0.9),
+        0px 0px 70px 64px rgba(169, 169, 169, 0.8);
         background-image: url("../images/paper_fibers.png");
-        border-radius: 56px;
+        border-radius: 64px;
     }
     100% {
         box-shadow: 
-        0px 0px 0px 8px rgba(255, 255, 255, 0.9),
-        0px 0px 0px 16px rgba(65, 167, 61, 0.8),
+        0px 0px 0px 16px rgb(71, 54, 54, 0.9),
         0px 0px 0px 24px rgba(255, 255, 255, 0.9),
-        0px 0px 0px 32px rgba(65, 167, 61, 0.8),
+        0px 0px 0px 32px rgb(71, 54, 54, 0.9),
         0px 0px 0px 40px rgba(255, 255, 255, 0.9),
-        0px 0px 0px 48px rgba(65, 167, 61, 0.8),
+        0px 0px 0px 48px rgb(71, 54, 54, 0.9),
         0px 0px 0px 56px rgba(255, 255, 255, 0.9),
-        0px 0px 70px 64px rgba(65, 167, 61, 0.8);
+        0px 0px 0px 64px rgb(71, 54, 54, 0.9),
+        0px 0px 72px 72px rgba(169, 169, 169, 0.8);
         background-image: url("../images/green-paper_fibers.jpg");
-        border-radius: 70px;
+        border-radius: 75px;
     }
 }
 
