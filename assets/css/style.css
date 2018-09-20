@@ -1,3 +1,5 @@
+/*Tag Wide Styling*/
+
 body {
     margin: auto;
     text-align: center;
@@ -9,6 +11,8 @@ body {
 p {
     font-size: 20px;
 }
+
+/*Class Wide Styling*/
 
 .jumbotron, .jumbotron-fluid {
     padding: 0px auto;
@@ -88,6 +92,8 @@ p {
 .results:first-child {
     margin-top: 20px;
 }
+
+/*Animation Styling*/
 
 @keyframes btn-hover {
     0% {box-shadow: none}
@@ -226,7 +232,7 @@ button:hover {
         0px 0px 70px 64px rgba(169, 169, 169, 0.8);
         border-radius: 56px;
     }
-    98% {
+    92% {
         box-shadow: 
         0px 0px 0px 8px rgb(71, 54, 54, 0.9),
         0px 0px 0px 16px rgba(255, 255, 255, 0.9),
@@ -256,22 +262,18 @@ button:hover {
 
 .start-game:hover {
     animation-name: start-hover;
-    animation-duration: 0.7s;
+    animation-duration: 0.8s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
 }
 
-.start-game:touch {
-    animation-name: start-hover;
-    animation-duration: 0.7s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-in;
-}
-
+/*Psuedo Class Styling*/
 
 button:focus {
     outline: none;
 }
+
+/*ID Styling*/
 
 #start-column {
     margin: 30px auto;
@@ -336,6 +338,7 @@ button:focus {
     font-size: 40px;
 }
 
+/*Mobile Styling*/
 
 @media screen and (max-width: 600px) {
     .gif {

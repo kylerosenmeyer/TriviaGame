@@ -33,6 +33,7 @@ var laW = {
     qP: 0,
     gamePhase: true,
     gameRestart: false,
+    buttonToggle: true,
 
     // Setup Variables for the timer.
     minutes: "00:",
@@ -66,6 +67,9 @@ var laW = {
 
     gameDisplay: function() {
 
+        //pause all other music
+        laW.endTrack.pause()
+
         //Take out the title and footer
         $("#jumbo, #jumbo-footer").slideUp(1050);
 
@@ -83,6 +87,10 @@ var laW = {
     //The game function pulls a question from the questionBank array and populates the page. It also begins a new countdown.
 
     game: function() {
+
+        
+        //play main music
+        laW.mainTrack.play()
 
         //The first step of the game is to check a condition: is the game coming back from break or restart? There are some settings to run if either are true, listed directly above.
 
@@ -119,19 +127,24 @@ var laW = {
     //They check for the condition that choosing "their" button was the right button, log the score, and then they send the game to break.
 
     checkA: function() {
+
+        //Check whether the answer chosen is right or wrong, and proceed to break
         console.log("You chose A")
-        if ( ( this.qP === 0) || ( this.qP === 2 ) || ( this.qP === 4 ) ) {
+        if ( ( laW.qP === 0) || ( laW.qP === 2 ) || ( laW.qP === 4 ) ) {
             clearInterval(laW.timeCounter)
-            this.correctAnswers++
-            this.gameBreak("right")
+            laW.correctAnswers++
+            laW.gameBreak("right")
         } else {
             clearInterval(laW.timeCounter)
-            this.incorrectAnswers++
-            this.gameBreak("wrong")
+            laW.incorrectAnswers++
+            laW.gameBreak("wrong")
         }
+       
     },
 
     checkB: function() {
+
+        //Check whether the answer chosen is right or wrong, and proceed to break
         console.log("You chose B")
         if ( ( this.qP === 1) || ( this.qP === 8 ) || ( this.qP === 9 ) ) {
             clearInterval(laW.timeCounter)
@@ -145,6 +158,8 @@ var laW = {
     },
 
     checkC: function() {
+
+        //Check whether the answer chosen is right or wrong, and proceed to break
         console.log("You chose C")
         if ( ( this.qP === 5) || ( this.qP === 6 ) || ( this.qP === 10 ) ) {
             clearInterval(laW.timeCounter)
@@ -158,6 +173,8 @@ var laW = {
     },
 
     checkD: function() {
+
+        //Check whether the answer chosen is right or wrong, and proceed to break
         console.log("You chose D")
         if ( ( this.qP === 3) || ( this.qP === 7 ) || ( this.qP === 11) ) {
             clearInterval(laW.timeCounter)
@@ -198,7 +215,7 @@ var laW = {
         } else if ( laW.qP === 2 ) {
             $("#graphics-content").append("In Kentucky, it is illegal to hold public office if you have fought in a duel with deadly weapons. Only passive aggression is allowed from politicians!<br><br><img class=\"gif\" src=\"https://media.giphy.com/media/C41yP1w3Pe0la/giphy.gif\">")
         } else if ( laW.qP === 3 ) {
-            $("#graphics-content").append("That\'s MADE up! But you might wanna know, that in Iowa, it is illegal to pass off <u>Margarine</u> as real <u>Butter</u>. It must be labeled \"Renovated Butter\".<br><br><img class=\"gif\" src=\"https://media.giphy.com/media/nQYnLFII2sFcQ/giphy.gif\">")
+            $("#graphics-content").append("That\'s MADE up! There are minimum speed limit laws, but it\'s that 10 under the limit driver that really gets on our nerves.<br><br><img class=\"gif\" src=\"https://media.giphy.com/media/3o84TWuA1LQ17yYeK4/giphy.gif\">")
         } else if ( laW.qP === 4 ) {
             $("#graphics-content").append("In New Hampshire, it is illegal to collect seaweed at night. But why??<br><br><img class=\"gif\" src=\"https://media.giphy.com/media/l3q2YZJj7ss1MjOwM/giphy.gif\">")
         }  else if ( laW.qP === 5 ) {
@@ -206,7 +223,7 @@ var laW = {
         }  else if ( laW.qP === 6 ) {
             $("#graphics-content").append("In South Dakota, farmers are permitted to use explosives, and fireworks to protect sunflower crops. Get off my farm! <br><br><img class=\"gif\" src=\"https://media.giphy.com/media/rK0Q7ndEM194I/giphy.gif\">")
         }  else if ( laW.qP === 7 ) {
-            $("#graphics-content").append("That\'s MADE up! But you might wanna know, that in Vermont, it is illegal to prohibit solar panels and clotheslines! Talk about dedication to reneweable energy!<br><br><img class=\"gif\" src=\"https://media.giphy.com/media/1X0xKtoeC0L8Q/giphy.gif\">")
+            $("#graphics-content").append("That\'s MADE up! Of course you can ski doing these things. Dress code?! Speed limits?! Please...<br><br><img class=\"gif\" src=\"https://media.giphy.com/media/vFXGVzIlemGu4/giphy.gif\">")
         }  else if ( laW.qP === 8 ) {
             $("#graphics-content").append("In West Virginia, it is illegal to substitute a hunting dog for a ferret. This right here is a hunting ferret, woof woof.<br><br><img class=\"gif\" src=\"https://media.giphy.com/media/pPJQvpK6Xslzy/giphy.gif\">")
         }  else if ( laW.qP === 9 ) {
@@ -214,11 +231,12 @@ var laW = {
         }  else if ( laW.qP === 10 ) {
             $("#graphics-content").append("In Alabama, it is illegal to drive blindfolded. Keep your eyes on the road, duh!<br><br><img class=\"gif\" src=\"https://media.giphy.com/media/rW93tN5vISkjC/giphy.gif\">")
         }  else if ( laW.qP === 11 ) {
-            $("#graphics-content").append("That\'s MADE up! But you should know, that in Louisiana, it is illegal to surprise someone with a pizza. Plan ahead!<br><br><img class=\"gif\" src=\"https://media.giphy.com/media/3o7bu2E3Bp1GhOdTmU/giphy.gif\">")
+            $("#graphics-content").append("That\'s MADE up! But the charge would read, \"Assault with a delicous weapon.\"<br><br><img class=\"gif\" src=\"https://media.giphy.com/media/3o7bu2E3Bp1GhOdTmU/giphy.gif\">")
         } 
 
         //Take the graphics back out.
         $("#graphics-title, #graphics-content").delay(8050).fadeOut(1050)
+
 
         //Check before going back to the game if we have run out of questions. If true, run the game Report.
         if ( laW.questionsAsked.length === laW.questionBank.length ) {
@@ -229,6 +247,7 @@ var laW = {
             setTimeout(laW.game, 10000)
         }
         
+        
     },
 
     gameReport: function() {
@@ -236,6 +255,10 @@ var laW = {
         $("#jumbo, #jumbo-footer").slideDown(1050);
         //Take out the Game Containers
         $("#clock-container, #question-container, #button-container").fadeOut(1050)
+
+        //play end music
+        laW.mainTrack.pause()
+        laW.endTrack.play()
 
         //Set the game phase because we are going to change some temporary stuff.
         laW.gamePhase = false;
@@ -253,6 +276,41 @@ var laW = {
         
     },
 
+    runA: function() {
+        $("body").off("click", "#choiceA")
+        laW.checkA()
+        setTimeout(function() {
+            $("body").on("click", "#choiceA", laW.runA)
+        }, 2000)
+    },
+
+    runB: function() {
+        $("body").off("click", "#choiceB")
+        laW.checkB()
+        setTimeout(function() {
+            $("body").on("click", "#choiceB", laW.runB)
+        }, 2000)
+    },
+
+    runC: function() {
+        $("body").off("click", "#choiceC")
+        laW.checkC()
+        setTimeout(function() {
+            $("body").on("click", "#choiceC", laW.runC)
+        }, 2000)
+    },
+
+    runD: function() {
+        $("body").off("click", "#choiceD")
+        laW.checkD()
+        setTimeout(function() {
+            $("body").on("click", "#choiceD", laW.runD)
+        }, 2000)
+    },
+
+    //music Section
+    mainTrack: new Audio("../TriviaGame/assets/audio/bensound-funkysuspense.mp3"),
+    endTrack: new Audio("../TriviaGame/assets/audio/bensound-dreams.mp3")
     
 
 };
@@ -288,6 +346,7 @@ $(document).ready(function() {
     console.log("The Game is Ready to Start")
 
 });
+    
 
 //Clicking the start button will transition to question 1.
 //This creates the question div and 4 answer buttons to choose from.
@@ -324,41 +383,44 @@ $("body").on("click", "button.start-game", function() {
     //launch the game.
     laW.game()
     
-});
 
-//The button click events wait for the user to make a choice, and run the appropriate check function to see if the user is right.
-
-$("body").one("click", "#choiceA", function clickA() {
-
-    laW.checkA()
     
 });
 
-$("body").one("click", "#choiceB", function() {
-    
-    laW.checkB()
+//End Object, Begin Events
+
+$("body").on("click", "#choiceA", function() {
+
+    laW.runA()
 
 });
 
-$("body").one("click", "#choiceC", function() {
+$("body").on("click", "#choiceB", function() {
     
-    laW.checkC()
+    laW.runB()
 
 });
 
-$("body").one("click", "#choiceD", function() {
+$("body").on("click", "#choiceC", function() {
     
-    laW.checkD()
+    laW.runC()
+
+});
+
+$("body").on("click", "#choiceD", function() {
+    
+    laW.runD()
 
 });
 
 
 //At the game end, get things ready to start the game again.
-$("body").one("click", "#restart", function() {
+$("body").on("click", "#restart", function() {
     console.log("Game is Going to Restart Soon")
     setTimeout(laW.game, 1050)
     $("#report-container").fadeOut(1050)
     $("#clock-container, #question-container, #button-container").delay(1050).fadeIn(1050)
 });
+
 
 
